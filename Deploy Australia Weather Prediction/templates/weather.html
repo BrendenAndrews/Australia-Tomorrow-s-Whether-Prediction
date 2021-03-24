@@ -1,0 +1,135 @@
+<html>
+    <head>
+    <style>
+        body, html {
+        height: 100%;
+        margin: 0;
+        }
+        .bg {
+        background-image: url("{{ url_for('static', filename='Background5.jpg')}}");
+        height: 100%; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        .form label{
+        width: 250px;
+        text-align: left;
+        font-weight:bold;
+        font-size:20px;
+        display: inline-block;
+        }
+        .button
+        {
+            font-size: 13px;
+            background-color:green;
+            width:100px;
+            height:30px;
+            font-weight:bold;
+        }
+        
+    </style>
+    </head>
+    <body>
+        <div class="bg form">
+        <br><br>
+        <center>
+            <h1 style="color:yellow">Australia Tomorrow's Weather predictor</h1><br>
+                <form method = "post", action = "/predict">
+                    <label for="loc">Location:</label>
+                    <input type="text" id = "loc" name="Location" list = "Locationnames" placeholder = "Enter Location"><br><br>
+                    <datalist id = "Locationnames">
+                    <option value="Albury">
+                    <option value="BadgerysCreek">
+                    <option value="Cobar">
+                    <option value="CoffsHarbour">
+                    <option value="Moree">
+                    <option value="Newcastle">
+                    <option value="NorahHead">
+                    <option value="NorfolkIsland">
+                    <option value="Penrith">
+                    <option value="Richmond">
+                    <option value="Sydney">
+                    <option value="WaggaWagga">
+                    <option value="Williamtown">
+                    <option value="Wollongong">
+                    <option value="Canberra">
+                    <option value="Tuggeranong">
+                    <option value="MountGinini">
+                    <option value="Ballarat">
+                    <option value="Bendigo">
+                    <option value="Sale">
+                    <option value="Melbourne">
+                    <option value="Mildura">
+                    <option value="Nhil">
+                    <option value="Portland">
+                    <option value="Watsonia">
+                    <option value="Dartmoor">
+                    <option value="Brisbane">
+                    <option value="Cairns">
+                    <option value="GoldCoast">
+                    <option value="Townsville">
+                    <option value="Adelaide">
+                    <option value="MountGambier">
+                    <option value="Nuriootpa">
+                    <option value="Woomera">
+                    <option value="Albany">
+                    <option value="Witchcliffe">
+                    <option value="PearceRAAF">
+                    <option value="Perth">
+                    <option value="SalmonGums">
+                    <option value="Walpole">
+                    <option value="Hobart">
+                    <option value="Launceston">
+                    <option value="AliceSprings">
+                    <option value="Darwin">
+                    <option value="Katherine">
+                    <option value="Uluru">
+                </datalist>  
+                <label for="rf">Rainfall</label>
+                <input type="text", id="rf" name = "Rainfall" placeholder = "Rainfall Recorded(mm)"> <br><br> 
+                <label for="wgd">WindGustDirection</label>
+                <input type="text" id="wgd" name="WindGustDirection" list = "WindDirections" placeholder = "StrongestWindGustDirection"><br><br>
+                <datalist id = "WindDirections">
+                    <option value="W">
+                    <option value="WNW">
+                    <option value="WSW">
+                    <option value="NE">
+                    <option value="NNW">
+                    <option value="N">
+                    <option value="NNE">
+                    <option value="SW">
+                    <option value="ENE">
+                    <option value="SSE">
+                    <option value="S">
+                    <option value="NW">
+                    <option value="SE">
+                    <option value="ESE">
+                    <option value="E">
+                    <option value="SSW">
+                </datalist>   
+                <label for="wgs">WindGustSpeed</label>
+                <input type="text" id="wgs" name = "WindGustSpeed" placeholder = "Strongest windgust Speed"> <br><br> 
+                <label for="rt">RainedToday?</label>
+                <input type="text" id="rt" name="RainToday" list = "RainTodayChoice" placeholder = "Yes/No"><br><br>
+                <datalist id = "RainTodayChoice">
+                    <option value="Yes">
+                    <option value="No">
+                </datalist> 
+                <label for="hum">Humidity</label>
+                <input type="text" id="hum" name = "Humidity" placeholder = "Humidity Percentage"> <br><br>
+                <label for="pre">Pressure</label>
+                <input type="text" id="pre" name = "Pressure" placeholder = "Average Pressure(In Hpa)"> <br><br>
+                <label for="tem">Temperature</label>
+                <input type="text" id="tem" name = "Temperature" placeholder = "Temperature(degrees C)"> <br><br></b>
+                <input type="submit" value="predict!" class="button"/>
+            </form>
+            <br>
+            <h3 style="font-weight:bold">{{pred}}</h3>
+        </center>
+        </div>     
+    </body>
+</html>           
+
+                     
+                
